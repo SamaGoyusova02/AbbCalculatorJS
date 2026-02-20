@@ -7,10 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -24,7 +20,6 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
-    --radius-lg: 0.5rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -179,27 +174,6 @@
   }
 }
 @layer utilities {
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -224,9 +198,6 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
-  .ml-20 {
-    margin-left: calc(var(--spacing) * 20);
-  }
   .block {
     display: block;
   }
@@ -238,9 +209,6 @@
   }
   .table {
     display: table;
-  }
-  .h-\[0px\] {
-    height: 0px;
   }
   .h-\[1px\] {
     height: 1px;
@@ -260,9 +228,6 @@
   .h-\[45px\] {
     height: 45px;
   }
-  .h-\[46px\] {
-    height: 46px;
-  }
   .h-\[50px\] {
     height: 50px;
   }
@@ -275,35 +240,14 @@
   .h-\[320px\] {
     height: 320px;
   }
-  .h-\[350px\] {
-    height: 350px;
-  }
-  .h-\[390px\] {
-    height: 390px;
-  }
-  .h-\[400px\] {
-    height: 400px;
-  }
   .h-\[420px\] {
     height: 420px;
-  }
-  .h-\[px\] {
-    height: px;
-  }
-  .w-\[3\] {
-    width: 3;
-  }
-  .w-\[34\] {
-    width: 34;
   }
   .w-\[35px\] {
     width: 35px;
   }
   .w-\[36px\] {
     width: 36px;
-  }
-  .w-\[40px\] {
-    width: 40px;
   }
   .w-\[50px\] {
     width: 50px;
@@ -344,20 +288,8 @@
   .w-\[370px\] {
     width: 370px;
   }
-  .w-\[380px\] {
-    width: 380px;
-  }
-  .w-\[px\] {
-    width: px;
-  }
   .w-full {
     width: 100%;
-  }
-  .max-w-\[300px\] {
-    max-width: 300px;
-  }
-  .max-w-\[370px\] {
-    max-width: 370px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -398,26 +330,11 @@
   .gap-20 {
     gap: calc(var(--spacing) * 20);
   }
-  .gap-\[0px\] {
-    gap: 0px;
-  }
-  .gap-\[40px\] {
-    gap: 40px;
-  }
-  .gap-\[50px\] {
-    gap: 50px;
-  }
-  .gap-\[80px\] {
-    gap: 80px;
-  }
   .gap-\[94px\] {
     gap: 94px;
   }
   .gap-\[100px\] {
     gap: 100px;
-  }
-  .gap-\[110px\] {
-    gap: 110px;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -447,9 +364,6 @@
   .bg-\[\#1b63ed\] {
     background-color: #1b63ed;
   }
-  .bg-\[\#\] {
-    background-color: #;
-  }
   .bg-\[\#b7cef9\] {
     background-color: #b7cef9;
   }
@@ -471,8 +385,8 @@
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
   }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
@@ -486,10 +400,6 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
-  }
-  .text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .text-4xl {
     font-size: var(--text-4xl);
@@ -593,24 +503,9 @@
       }
     }
   }
-  .lg\:w-\[300px\] {
-    @media (width >= 64rem) {
-      width: 300px;
-    }
-  }
-  .lg\:w-\[370px\] {
-    @media (width >= 64rem) {
-      width: 370px;
-    }
-  }
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
-    }
-  }
-  .lg\:gap-\[100px\] {
-    @media (width >= 64rem) {
-      gap: 100px;
     }
   }
 }
