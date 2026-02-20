@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABB JS  CALC</title>
+      <link href="src/output.css" rel="stylesheet">
+      <link rel="stylesheet" href="font.css">
+</head>
+<body class="overflow-hidden">
+    <div class="flex flex-col items-center ">
+        <div><p class="text-5xl font-[500] mt-10 font-[Inter]">İndi Hesablayın</p></div>
+        <div class="flex gap-7 mt-7 flex-wrap justify-center">
+            <p id="kd" onclick="opencardkredit()" class="text-[#7a7d82] w-[100px] h-[35px] hover:bg-black hover:text-white flex justify-center items-center rounded-[20px] duration-300 ease-in-out hover:-translate-y-1 font-[600]">Kredit</p>
+            <p id="dt" onclick="opencarddepozit()" class="text-[#7a7d82] w-[100px] h-[35px] hover:bg-black hover:text-white flex justify-center items-center rounded-[20px] duration-300 ease-in-out hover:-translate-y-1  font-[600]">Depozit</p>
+            <p id="at" onclick="openavtomobil()" class="text-[#7a7d82] w-[156px] h-[35px] hover:bg-black hover:text-white flex justify-center items-center rounded-[20px] duration-300 ease-in-out hover:-translate-y-1  font-[600]">Avtomobil Krediti</p>
+            <p id="pt" onclick="openipoteka()" class="text-[#7a7d82] w-[100px] h-[35px] hover:bg-black hover:text-white flex justify-center items-center rounded-[20px] duration-300 ease-in-out hover:-translate-y-1  font-[600]">Ipoteka</p>
+        </div>
+    </div>
+    <!--Card part 1-->
+       <div id="cardkredit" >
+         <div  class="flex flex-col lg:flex-row justify-center gap-[100px] items-center mt-15 w-full">
+            <div class="I flex flex-col gap-7">
+                <div class="I-I">
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Məbləğ</p>
+                        <p id="meblegdeyiseni">10000 ₼</p>
+                    </div>
+                    <input id="mebleg" oninput="artirmebleg()" class="w-[370px]" type="range" min="300" max="50000" id="mebleg "/>
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">300 ₼</p>
+                        <p class="text-[#7a7d82] font-[500]">50000 ₼</p>
+                    </div>
+                </div>
+
+                <div id="I-II">
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Müddət</p>
+                        <p id="muddetdeyiseni">12 ay</p>
+                    </div>
+                    <input id="muddet" oninput="artirmuddet()" class="w-[370px]" type="range" min="3" max="59" id="mebleg"/>
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">3 ay</p>
+                        <p class="text-[#7a7d82] font-[500]">59 ay</p>
+                    </div>
+                </div>
+
+                 <div id="I-III">
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Faiz dərəcəsi</p>
+                        <p id="faizdeyiseni">34 %</p>
+                    </div>
+                    <input id="faiz" oninput="artirfaiz()" class="w-[370px]" type="range" min="10.9" max="37.7"  id="mebleg"/>
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">10.9 %</p>
+                        <p class="text-[#7a7d82] font-[500]">37.7 %</p>
+                    </div>
+                </div>
+            </div>
+            <div class="II">
+                <div class="bg-[#1b63ed] w-[370px] h-[240px] rounded-[30px] flex flex-col justify-center items-center gap-4">
+                    <p class="text-white text-[1.1em] font-[500]">Ayylıq kredit ödənişi</p>
+                    <p id="kreditodenisi" class="text-[2.5em] text-white font-[600]">888.49 ₼</p>
+                    <button class="bg-white  w-[300px] h-[45px] rounded-[10px] font-[500]">Davam et</button>
+                </div>
+                <p class="text-center mt-4 text-[#484a4f]">İlkin hesablama</p>
+            </div>
+        </div>
+
+       </div>
+        <!--Card Part 2-->
+       <div id="carddepozit" class="hidden" >
+            <div  class="  flex flex-col lg:flex-row justify-center gap-[100px] items-center mt-15">
+            <div class="I">
+                <div class="com">
+                    <div class="flex justify-between gap-10">
+                        <div class="flex gap-5 bg-[#f5f5f6] w-[140px] h-[40px] rounded-[10px] justify-center items-center">
+                            <p onclick="heray()" id="ay" class="w-[53px] h-[30px] rounded-[5px]  flex justify-center items-center ">Hər ay</p>
+                             <p onclick="heril()" id="il" class="w-[50px] h-[30px] rounded-[5px]  flex justify-center items-center ">Hər il</p>
+                        </div>
+                        <div class="flex gap-5 bg-[#f5f5f6] w-[140px] h-[40px] rounded-[10px] justify-center items-center">
+                            <p onclick="changeazn()" id="azn" class="w-[50px] h-[30px] rounded-[5px]  flex justify-center items-center ">AZN</p>
+                            <p onclick="usdchange()" id="usd" class="w-[50px] h-[30px] rounded-[5px]  flex justify-center items-center ">USD</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                     <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Məbləğ</p>
+                        <p id="deyisenmblg">10000 ₼</p>
+                    </div>
+                    <input id="mblg" oninput="artirmblg()"  class="w-[370px]" type="range" min="300" max="3000000" />
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">300 ₼</p>
+                        <p class="text-[#7a7d82] font-[500]">3000000 ₼</p>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="mt-5">Müddət</p>
+                    <div class="flex gap-5 mt-4">
+                        <p onclick="three()" class="w-[35px] h-[35px] rounded-[50%] bg-[#f1f1f1] flex justify-center items-center text-[.8em] hover:border hover:bg-white duration-300 ease-in-out ">3</p>
+                        <p id="six2" onclick="six()" class="w-[35px] h-[35px] rounded-[50%] bg-[#f1f1f1] flex justify-center items-center text-[.8em] hover:border hover:bg-white duration-300 ease-in-out">6</p>
+                        <p onclick="twelve()" class="w-[35px] h-[35px] rounded-[50%] bg-[#f1f1f1] flex justify-center items-center text-[.8em] hover:border hover:bg-white duration-300 ease-in-out">12</p>
+                        <p onclick="eighteen()" class="w-[35px] h-[35px] rounded-[50%] bg-[#f1f1f1] flex justify-center items-center text-[.8em] hover:border hover:bg-white duration-300 ease-in-out">18</p>
+                        <p onclick="twenty_four()" class="w-[35px] h-[35px] rounded-[50%] bg-[#f1f1f1] flex justify-center items-center text-[.8em] hover:border hover:bg-white duration-300 ease-in-out">24</p>
+                        <p onclick="thirty_six()" class="w-[35px] h-[35px] rounded-[50%] bg-[#f1f1f1] flex justify-center items-center text-[.8em] hover:border hover:bg-white duration-300 ease-in-out">36</p>
+                    </div>
+                </div>
+            </div>
+            <div class="II">
+                <div  class="bg-[#1b63ed] w-[370px] h-[240px] rounded-[30px] flex flex-col justify-center items-center gap-3">
+                    <p class="text-white text-[1.1em] font-[500]">Ümumi qazanc</p>
+                    <p id="qazanc" class="text-white text-[2.5em] font-[500]">200.00 ₼</p>
+                
+                   <div class="bg-[#b7cef9] h-[1px] w-[310px]"></div>
+                    <div class="flex justify-between gap-20">
+                        <div>
+                            <p class="text-[#b7cef9]">Hər ay ödənilən faiz</p>
+                            <p id="odenilenfaiz"  class="text-white font-[500] text-[1.8em]">66.67 ₼</p>
+                        </div>
+                        <div>
+                            <p class="text-[#b7cef9]">Faiz dərəcəsi</p>
+                            <p id="faizderecesi" class="text-white font-[500] text-[1.8em]">8 %</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+       <!--Card Part 3-->
+       <div class="hidden" id="avtomobilkrediti">
+       <div class="flex flex-col lg:flex-row justify-center gap-[100px] items-center mt-15">
+         <div class="III-I">
+            <div class="flex gap-5 bg-[#f5f5f6] h-[50px] w-[240px] rounded-[10px] items-center justify-center">
+                <p id="elektrik" onclick="elek()" class=" px-2 py-1 rounded-[5px]">Elektrik</p>
+                <p id="hibrid" onclick="hib()" class=" px-2 py-1 rounded-[5px]">Hibrid</p>
+                <p id="diger" onclick="dgr()" class=" px-2 py-1 rounded-[5px]">Digər</p>
+            </div>
+                <div class="mt-10">
+                     <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Avtomobilin qiyməti</p>
+                        <p id="deyisenavto" >50000 ₼</p>
+                    </div>
+                    <input id="avtomobil" oninput="artiravto()" class="w-[370px]" type="range" min="300" max="500000" />
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">300 ₼</p>
+                        <p class="text-[#7a7d82] font-[500]">500000  ₼</p>
+                    </div>
+                </div>
+                <div class="mt-10">
+                     <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">İlkin ödəniş faizi</p>
+                        <p id="deyisenilkin">20 %</p>
+                    </div>
+                    <input id="ilkin" oninput="artirilkin()" class="w-[370px]" type="range" min="10" max="90" />
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">10 %</p>
+                        <p class="text-[#7a7d82] font-[500]">90 %</p>
+                    </div>
+                </div>
+                <div class="mt-10">
+                     <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Kredit müddəti</p>
+                        <p id="deyisenay">24 ay</p>
+                    </div>
+                    <input id="avtoay" oninput="artiray()" class="w-[370px]" type="range" min="3" max="60" />
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">3 ay</p>
+                        <p class="text-[#7a7d82] font-[500]">60 ay</p>
+                    </div>
+                </div>
+         </div>
+        <div class="III-II">
+            <div class="bg-[#1b63ed] w-[370px] h-[420px] rounded-[30px] flex flex-col justify-center items-center gap-4">
+                <p class="text-white text-xl">Aylıq kredit ödənişi</p>
+                <p id="ayliqkredit" class="font-[500] text-white text-4xl">811.29 ₼</p>
+                <div class="bg-[#c0d4fa] w-[340px] h-[1px] mt-4"></div>
+                <div class="flex justify-between items-center gap-[94px]">
+                    <div>
+                        <p  class="text-[#bcd1fa]">Kredit məbləği</p>
+                        <p id="kreditmeblegi" class="text-2xl text-white font-[500]">32532.9 ₼</p>
+                    </div>
+                    <div>
+                        <p class="text-[#bcd1fa]">İllik faiz dərəcəsi</p>
+                        <p id="faizavto" class="text-2xl text-white font-[500]">15 %</p>
+                    </div>
+                </div>
+
+                  <div class="flex justify-between items-center ">
+                    <div >
+                        <p class="text-[#bcd1fa] w-[80%]">Komissiya (0.5%, min 20 AZN)</p>
+                        <p id="komissiya" class="text-2xl text-white font-[500]">1626.65 ₼</p>
+                    </div>
+                    <div>
+                        <p class="text-[#bcd1fa]">Ümumi ödəniş</p>
+                        <p id="umumiodenis" class="text-2xl text-white font-[500]">45432.24 ₼</p>
+                    </div>
+                </div>
+                <button class="bg-white w-[320px] h-[50px] rounded-[15px]"> Davam et</button>
+            </div>
+        </div>
+       </div>
+       </div>
+       <!--Card part 4-->
+       <div id="containeripoteka" class="hidden">
+        <div class="flex flex-wrap items-center justify-center gap-[100px] mt-15">
+            <div class="IV-1">
+                    <div class="mt-10">
+                     <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Kredit məbləği</p>
+                        <p id="ipodeyiseni">500000 ₼</p>
+                    </div>
+                    <input id="ipotekakredit" oninput="ipoteka()"  class="w-[370px]" type="range" min="1" max="500000" />
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">1 ₼</p>
+                        <p class="text-[#7a7d82] font-[500]">500000 ₼</p>
+                    </div>
+                </div>
+
+                  <div class="mt-8">
+                     <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">Müddət</p>
+                        <p id="deyisenvaxt">25 il</p>
+                    </div>
+                    <input id="vaxt" oninput="vaxtartir()"  class="w-[370px]" type="range" min="1" max="25" />
+                    <div class="flex justify-between">
+                        <p class="text-[#7a7d82] font-[500]">1 il</p>
+                        <p class="text-[#7a7d82] font-[500]">25 il</p>
+                    </div>
+                </div>
+                <h2 class="text-[#7a7d82] mt-6">İllik faiz dərəcəsi</h2>
+                <div class="flex gap-4 mt-4">
+                    <p onclick="per4()" class="flex justify-center items-center w-[36px] h-[36px] bg-[#f1f1f1] text-[.8em] rounded-[50%]">4%</p>
+                    <p onclick="per7()" class="flex justify-center items-center w-[36px] h-[36px] bg-[#f1f1f1] text-[.8em] rounded-[50%]">7%</p>
+                    <p onclick="per8()" class="flex justify-center items-center w-[36px] h-[36px] bg-[#f1f1f1] text-[.8em] rounded-[50%]">8%</p>
+                    <p onclick="per11()" class="flex justify-center items-center w-[36px] h-[36px] bg-[#f1f1f1] text-[.8em] rounded-[50%]">11%</p>
+                    <p onclick="per12()" class="flex justify-center items-center w-[36px] h-[36px] bg-[#f1f1f1] text-[.8em] rounded-[50%]">12%</p>
+                    <p onclick="per13()" class="flex justify-center items-center w-[36px] h-[36px] bg-[#f1f1f1] text-[.8em] rounded-[50%]">13%</p>
+                </div>
+            </div>
+            <div class="IV-II">
+                <div class="bg-[#1b63ed] w-[360px] h-[320px] rounded-[30px]  flex flex-col items-center justify-center">
+                    <p class="text-white font-[500] text-xl">Aylıq kredit ödənişi</p>
+                    <p id="odenis" class="text-white text-4xl  mt-4 font-[600]">875.53 ₼</p>
+                      <div class="bg-[#c0d4fa] w-[320px] h-[1px] mt-4 mb-5"></div>
+                      <div class="flex justify-between items-center justify-center gap-[100px]">
+                        <div>
+                            <p  class="text-[#c0d4fa]">Kredit məbləği</p>
+                            <p id="kreditmeblegipoteka" class="text-2xl font-[500] text-white ">100000 ₼</p>
+                        </div>
+                        <div>
+                            <p  class="text-[#c0d4fa]">İllik faiz dərəcəsi</p>
+                            <p id="faizipoteka" class="text-2xl font-[500] text-white">4 %</p>
+                        </div>
+                      </div>
+                    <button class="bg-white w-[320px] h-[54px] rounded-[15px] mt-8"> Davam et</button>
+                </div>
+            </div>
+        </div>
+       </div>
+    <script src="app.js"></script>
+</body>
+</html>
