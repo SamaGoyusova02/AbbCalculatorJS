@@ -2,7 +2,7 @@
 const meblegdeyiseni = document.getElementById('meblegdeyiseni')
 const mebleg = document.getElementById('mebleg')
 function artirmebleg(){
-    meblegdeyiseni.innerHTML = mebleg.value
+    meblegdeyiseni.innerHTML = `${mebleg.value}  ₼`
     hesabla()
 }
 
