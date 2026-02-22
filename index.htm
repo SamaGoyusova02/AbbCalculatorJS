@@ -6,9 +6,46 @@
     <title>ABB JS  CALC</title>
       <link href="src/output.css" rel="stylesheet">
       <link rel="stylesheet" href="font.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="flex flex-col items-center ">
+    <div class="fixed left-0 bottom-[6px] w-[56px] z-100 "><img src="img/humanes.png" alt="humanes"/></div>
+    <div class="fixed right-[5px] bottom-[6px] w-[46px] z-100 "><img src="img/fixed2.png" alt="fixed2"/></div>
+
+    <header>
+        <!--desktop header-->
+        <div class="flex justify-between px-[100px] items-center pt-3 hidden md:flex lg:flex bg-white">
+            <div class="flex gap-10 items-center">
+                <img src="img/mainlogo.png" alt="mainlogo"/>
+                <ul class="flex gap-6">
+                    <li class="hover:text-[#1b63ed] duration-300 ease-in-out font-[500]">Fərdi</li>
+                    <li class="hover:text-[#1b63ed] duration-300 ease-in-out font-[500]">Biznes</li>
+                    <li class="hover:text-[#1b63ed] duration-300 ease-in-out font-[500]" >Haqqımızda</li>
+                    <li class="hover:text-[#1b63ed] duration-300 ease-in-out font-[500]">İnvestorlarla əlaqə</li>
+                </ul>
+            </div>
+              <div class="flex gap-7 items-center">
+                    <div><i class="fa-solid fa-magnifying-glass text-[#7a7d82]"></i> </div>
+                    <p class="text-[#7a7d82]">|</p>
+                    <div  class="text-[#7a7d82]">AZ</div>
+                    <p  class="text-[#7a7d82]">|</p>
+                    <div><i class="fa-solid fa-phone text-[#7a7d82]"></i>  <span class="pl-1 text-[#7a7d82]">937</span></div>
+                    <div><button class="bg-[#1b63ed] px-3 py-2 flex justify-center items-center rounded-[10px] text-white"><i class="fa-solid fa-location-dot"></i><span class="pl-2">Xidmət şəbəkəsi</span></button></div>
+              </div>
+        </div>
+      <!--Mobil header-->
+      <div class="flex justify-between px-[30px] items-center pt-4 pb-4 fixed w-full z-50 bg-white shadow-[0_0-15px_#7a7d82] md:hidden lg:hidden">
+        <div><img class="w-[100px]" src="img/mainlogo.png" alt="mainlogo"/></div>
+        <ul class="flex items-center gap-4">
+            <li class="text-[#7a7d82]">AZ</li>
+            <li><i class="fa-solid fa-phone text-[#7a7d82]"></i>  <span class="pl-1 text-[#7a7d82]">937</span> </li>
+            <li><i class="fa-solid fa-bars-staggered text-2xl text-[#7a7d82]"></i></li>
+        </ul>
+      </div>
+    </header>
+
+
+    <div class="flex flex-col items-center pt-[66px] lg:pt-0">
         <div><p class="text-5xl font-[500] mt-10 font-[Inter]">İndi Hesablayın</p></div>
         <div class="flex gap-7 mt-7 flex-wrap justify-center">
             <p id="kd" onclick="opencardkredit()" class="text-[#7a7d82] w-[100px] h-[35px] hover:bg-black hover:text-white flex justify-center items-center rounded-[20px] duration-300 ease-in-out hover:-translate-y-1 font-[600]">Kredit</p>
